@@ -48,6 +48,13 @@ namespace RegistroAutos
 		{
 			Vehiculo vehiculo = new Vehiculo();
 
+			int id;
+			if (!int.TryParse(autoID.Text, out id))
+			{
+				lblId.Visible = true;
+				return;
+			}
+
 			vehiculo.Id = int.Parse(autoID.Text);
 			vehiculo.Modelo = autoModelo.Text;
 			vehiculo.Marca = autoMarca.Text;
@@ -62,6 +69,7 @@ namespace RegistroAutos
 
 			List<Vehiculo> temp = (List<Vehiculo>)Session["listaVehiculos"];
 			Vehiculo repetido = temp.Find(x => x.Id == vehiculo.Id);
+
 			if (repetido == null)
 			{
 				temp.Add(vehiculo);

@@ -39,4 +39,5 @@
     <asp:Button CssClass="btn btn-primary" runat="server" Text="Eliminar" ID="btnEliminar" OnClick="btnEliminar_Click" />
     <a href="Default.aspx" class="link-danger link-opacity-10-hover mx-auto p-2" id="btnCancelar">Cancelar</a>
     <asp:Label runat="server" ID="lblError" Visible="false" Text="El ID ya existe, ingrese otro"></asp:Label>
+    <asp:Label runat="server" ID="lblId" Visible="false" Text="El ID debe ser un numero entero"></asp:Label>
 </asp:Content>
